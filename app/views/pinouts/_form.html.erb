@@ -1,0 +1,53 @@
+<%= form_with(model: pinout, local: true) do |form| %>
+
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.number_field :project_id %>
+  </div>
+  <div class="md-form">
+    <input placeholder="Placeholder" type="text" id="project_id" class="form-control">
+    <label for="project_id">Placeholder</label>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :pin_dut %>
+    <%= form.number_field :pin_dut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pin_dut_name %>
+    <%= form.text_field :pin_dut_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pin_dut_description %>
+    <%= form.text_area :pin_dut_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pin_setup %>
+    <%= form.number_field :pin_setup %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pin_setup_name %>
+    <%= form.text_field :pin_setup_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pin_setup_description %>
+    <%= form.text_area :pin_setup_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+!-- Material input -->
+<div class="md-form">
+  <input placeholder="Placeholder" type="text" id="inputPlaceholderEx" class="form-control">
+  <label for="inputPlaceholderEx">Placeholder</label>
+</div>

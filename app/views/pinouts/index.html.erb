@@ -1,0 +1,47 @@
+
+
+<div class="container">
+<h1>Pinouts</h1>
+<div class="fluid">
+    <%= will_paginate @pinouts, renderer: BootstrapPagination::Rails%>
+</div>
+
+<table class="table table-hover table-border">
+    <thead class="thead-dark">
+      <tr>
+        <th>Project:</th>
+        <th>Pin dut:</th>
+        <th>Pin dut name:</th>
+        <th>Pin dut description:</th>
+        <th>Pin setup:</th>
+        <th>Pin setup name:</th>
+        <th>Pin setup description:</th>
+        <th>Actions:</th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <% @pinouts.each do |pinout|  %>
+
+      <tr>
+        <td><%= pinout.project.name %></td>
+        <td><%= pinout.pin_dut %></td>
+        <td><%= pinout.pin_dut_name %></td>
+        <td><%= pinout.pin_dut_description %></td>
+        <td><%= pinout.pin_setup %></td>
+        <td><%= pinout.pin_setup_name %></td>
+        <td><%= pinout.pin_setup_description %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+                <button  type="button" class="btn btn-secondary"><%= link_to 'Show', pinout_path(pinout) %></button>
+                <button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_pinout_path(pinout) %></button>
+                <button type="button" class="btn btn-secondary"><%= link_to 'Destroy', pinouts_path, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+
+</table>
+
+</div>

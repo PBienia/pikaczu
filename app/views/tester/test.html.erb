@@ -1,0 +1,40 @@
+<h1>Tester#test</h1>
+<p>Find me in app/views/tester/test.html.erb</p>
+<div class= "container">
+<h3>Test dla: <%= @project.project%></h3>
+
+<table class="table table-hover">
+
+    <tr class="info">
+      <th>Pin dut:</th>
+      <th>name:</th>
+      <th>description:</th>
+      <th>Pin setup:</th>
+      <th>name:</th>
+      <th>description:</th>
+       <th>Test:</th>
+    </tr>
+
+
+
+    <% @pinouts.each do |pinout| %>
+      <tr>
+        <td><%= pinout.pin_dut %></td>
+        <td><%= pinout.pin_dut_name %></td>
+        <td><%= pinout.pin_dut_description %></td>
+        <td><%= pinout.pin_setup %></td>
+        <td><%= pinout.pin_setup_name %></td>
+        <td><%= pinout.pin_setup_description %></td>
+        <td>   		<%if TesterController.new.MainTest(pinout.pin_dut, pinout.pin_setup)%>
+        			<span class="badge badge-primary">OK</span>
+        	<%else%>
+        			<span class="badge badge-secondary">NOK</span>
+        	<%end%>
+        </td>
+       </td>
+      </tr>
+
+
+    <% end %>
+
+</table>

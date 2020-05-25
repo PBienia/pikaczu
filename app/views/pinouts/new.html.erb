@@ -1,0 +1,55 @@
+<h1>Pinouts#new</h1>
+<p>Find me in app/views/pinouts/new.html.erb</p>
+
+
+
+<div class='hero-unit'>
+ <h1>New pinout </h1>
+
+<%= form_for(:pinout,:url=>{:action=>'create'}) do |pinout|%>
+
+<table class ="table table-striped">
+
+ <tr>
+	<th><%= pinout.label(:project_id, "Project: ")%></th>
+		<th><%= pinout.select(:project_id, @project.map{|t|[t.name, t.id]}, :class =>'form-control')%></th>
+	</tr>
+	<tr>
+		<th><%= pinout.label(:pin_dut,"Pin No:")%></th>
+		<td><%= pinout.number_field(:pin_dut, :class =>'form-control')%></td>
+	<tr>
+
+	<tr>
+		<th><%= pinout.label(:pin_dut_name,"Pin Name:")%></th>
+		<td><%= pinout.text_field(:pin_dut_name, :class =>'form-control')%></td>
+	<tr>
+
+	<tr>
+		<th><%= pinout.label(:pin_dut_description,"Pin Dut Description!:")%></th>
+		<td><%= pinout.text_area(:pin_dut_description, :class =>'form-control')%></td>
+	<tr>
+
+	<tr>
+		<th><%= pinout.label(:pin_setup,"Pin No:")%></th>
+		<td><%= pinout.number_field(:pin_setup, :class =>'form-control')%></td>
+	<tr>
+
+	<tr>
+		<th><%= pinout.label(:pin_setup_name,"Pin Name:")%></th>
+		<td><%= pinout.text_field(:pin_setup_name, :class =>'form-control')%></td>
+	<tr>
+
+	<tr>
+		<th><%= pinout.label(:pin_setup_description,"Pin Dut Description!:")%></th>
+		<td><%= pinout.text_area(:pin_setup_description, :class =>'form-control')%></td>
+	<tr>
+
+</table>
+
+<div style= "text-align :center">
+		<%= link_to("Back to index",{:action=> 'index'},:class => 	'btn btn-warning')%>
+		<%= submit_tag("Create",:class => 'btn btn-primary')%>
+</div>
+
+	<%end%>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "pikaczu",
+  "private": true,
+  "dependencies": {
+    "bootstrap-table": "^1.16.0"
+  }
+}

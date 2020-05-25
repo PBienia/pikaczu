@@ -1,0 +1,28 @@
+
+<div class="container">
+
+  <div style="text-align: center">
+    <%= will_paginate @project, renderer: BootstrapPagination::Rails%>
+
+
+  </div>
+
+
+    <% @project.each do |project|%>
+
+              <div class="jumbotron jumbotron-fluid">
+<%= link_to project_path(project) do %>
+              <div class="container">
+                        <h2 class="display-4"><%=project.name%></h2>
+                        <hr class="my-4">
+                        <p class="lead"><%= project.description%></p>
+
+                  </div>
+                       <% end %>
+              </div>
+
+
+    <% end %>
+
+
+</div>

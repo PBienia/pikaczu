@@ -1,0 +1,35 @@
+<h1>Pinouts#show</h1>
+<p>Find me in app/views/pinouts/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Project:</strong>
+  <%= @pinout.project.id %>
+</p>
+<p>
+  <strong>Pin dut:</strong>
+  <%= @pinout.pin_dut %>
+</p>
+<p>
+  <strong>Pin dut name:</strong>
+  <%= @pinout.pin_dut_name %>
+</p>
+<p>
+  <strong>Pin dut description:</strong>
+  <%= @pinout.pin_dut_description %>
+</p>
+<p>
+  <strong>Pin setup:</strong>
+  <%= @pinout.pin_setup %>
+</p>
+<p>
+  <strong>Pin setup name:</strong>
+  <%= @pinout.pin_setup_name %>
+</p>
+<p>
+  <strong>Pin setup description:</strong>
+  <%= @pinout.pin_setup_description %>
+</p>
+
+<%= link_to 'Edit', edit_pinout_path(@pinout) %> |
+<%= link_to 'Back', pinouts_path %>

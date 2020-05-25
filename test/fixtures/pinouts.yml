@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pin_dut: 
+  pin_dut_name: MyString
+  pin_dut_desc: MyText
+  pin_setup: 
+  pin_setup_name: MyString
+  pin_setup_desc: MyText
+  project: one
+
+two:
+  pin_dut: 
+  pin_dut_name: MyString
+  pin_dut_desc: MyText
+  pin_setup: 
+  pin_setup_name: MyString
+  pin_setup_desc: MyText
+  project: two

@@ -1,0 +1,29 @@
+
+
+	<div class="container">
+		<div class="row">
+			<p class="lead">Cable Tester - List of projects!</p>
+		</br>
+
+		<% @projects.each do |project|%>
+		 <%= link_to(project) do %>
+			 <div class="jumbotron">
+			 	 <h1 class="display-4"><%= project.name%></h1><h2>
+
+		</br>
+			  	<p>%= project.project_description%></p>
+			  	<% end %>
+		</br>
+
+		<%= link_to( controller: "tester", action: "test", id: project) do %>
+	<button type="button" class="btn btn-primary btn-lg btn-block">Go Test! </button>
+
+		<% end %>
+
+	</div>
+
+		<% end %>
+
+	</div>
+
+</div>

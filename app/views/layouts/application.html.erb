@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pikaczu</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-invers navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Tester</a>
+          <ul class="nav navbar-nav">
+
+            <li><a href="#">Projects</a></li>
+            <li><a href="/static/manual">Manual</a></li>
+            <li><a href="/pinouts">Pinout</a></li>
+          </ul>
+  </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/static/manual">Manual</a></li>
+            <li><a href="#"> <span class="fa fa-envelope-o"></span> Contact</a></li>
+            <li></li>
+            <li><a href="/test/shutdown"> <span class="glyphicon glyphicon-off"></span> Off </a></li>
+          </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-2">
+
+            <div class="list-group" style="text-align: center">
+            <% Project.all.each do |project|  %>
+            <%= link_to project_path(project), class: "list-group-item" do %>
+                <h4 class="list-group-item-heading"> <%= project.name %></h4>
+                <p class="list-group-item-text"></p>
+                  <% end %>
+              <% end %>
+            </div>
+
+            </div>
+            <div class="col-md-10">
+                <%= yield %>
+            </div>
+      </div>
+    </div>
+  </body>
+</html>
