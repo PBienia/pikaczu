@@ -1,10 +1,65 @@
-<h1>Pinouts#edit</h1>
-<p>Find me in app/views/pinouts/edit.html.erb</p>
+
+<%= form_for(:pinout,:url=>{:action=>'create'}) do |pinout|%>
+
+<div class="panel panel-default">
+
+        <div class="panel-heading">Editing pinout</div>
+
+        <div class="panel-body">
+
+        <form>
+
+        <div class="form-row">
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_dut, "pin DUT-side: pin No")%>
+                    <%= pinout.number_field(:pin_dut, :class =>'form-control')%>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_dut_name,"pin DUT-site: name")%>
+                    <%= pinout.text_field(:pin_dut_name, :class =>'form-control')%>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_dut_description,"pin DUT-side: description")%>
+                    <%= pinout.text_field(:pin_dut_description, :class =>'form-control')%>
+                </div>
+        </div>
+
+        <div class="form-row">
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_setup, "pin setup-side: pin No")%>
+                    <%= pinout.number_field(:pin_setup, :class =>'form-control')%>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_setup_name,"pin setup-site: name")%>
+                    <%= pinout.text_field(:pin_setup_name, :class =>'form-control')%>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <%= pinout.label(:pin_setup_description,"pin setup-side: description")%>
+                    <%= pinout.text_field(:pin_setup_description, :class =>'form-control')%>
+                </div>
+        </div>
 
 
-<h1>Editing Pinout</h1>
 
-<%= render 'form', pinout: @pinout %>
 
-<%= link_to 'Show', @pinout %> |
-<%= link_to 'Back', pinout_path %>
+        </form>
+
+        </div>
+
+        <div class="panel-footer">
+
+          <button type="submit" class="btn btn-primary">Sign in</button>
+
+          <%= link_to 'Show', @pinout %>
+          <%= link_to 'Back', pinout_path %>
+        </div>
+
+
+  </div>
+
+
+<% end %>

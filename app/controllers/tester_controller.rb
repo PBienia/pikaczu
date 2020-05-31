@@ -32,6 +32,7 @@ class TesterController < ApplicationController
 		 						end
 		 						return("funstion: test")
   end
+
 # 3 ---------------------------------------------------------
 
   def mux(pin)   #ustawienie wyjsc sterujacych multiplekserami w RPi dla danego pinu
@@ -147,8 +148,8 @@ end
 
  def shutdown
 
-#system ("ls")
-#system("^c")
+system ("ls")
+system("^C")
 #system ("sudo shutdown -h now")
 
  end

@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
     #@project = Project.all
     @project = Project.find(params[:id])
-    @pinout = Pinout.all.paginate(:page => params[:page], :per_page =>3)
+    @pinout = Pinout.all.paginate(:page => params[:page], :per_page =>10)
 
 
   end

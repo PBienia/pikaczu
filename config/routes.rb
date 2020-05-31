@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
+  get '/test' => 'application#test'
+
   get 'pinouts/pinout_project'
-  get 'test/shutdown'
+  get 'tester/shutdown'
 #  get 'pinouts/show'
 #  get 'pinouts/new'
 #  get 'pinouts/edit'
 #  get 'pinouts/create'
 # get 'tester/main'
-# get 'tester/test'
+ #get 'tester/testtest'
 
 get 'tester' => 'tester#main', as: :mainpage
 get 'test' =>'tester#test', as: :start
  get 'static/manual'
+ get 'static/maintanance'
 # post 'pinouts/create'
 
 root to: "projects#index"

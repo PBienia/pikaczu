@@ -1,51 +1,60 @@
 
-<div class="container fluid">
+<div class="container">
+
   <div class="col-md-4">
 
-    <div class="jumbotron">
+<div class="panel panel-default">
+  <div class="panel-heading"> <h2><b>Project:</b> <%=@project.name%></h2></div>
+          <div>
 
-          <h2> Project: <%=@project.name%></h2>
-          </br>
-          </br>
+                </br>
+                </br>
+                <p class="lead"> <%= @project.description%> </p>
+                <%= link_to static_maintanance_path do%>
+                <button data-toggle="tooltip" title="Edit information about project." class="btn btn-success btn-lg btn-block"> Edit </button>
+                <% end %>
+              </br>
+              </br>
 
-          <p class="lead"> <%= @project.description%> </p>
+                <%= link_to( controller: "tester", action: "test", id: @project.id) do %>
+              <button data-toggle="tooltip" title="Start to test for <%= @project.name%>" type="button" class="btn btn-warning btn-lg btn-block"> <span class="glyphicon glyphicon-play"></span> </button>
+                          <% end %>
+                        </br>
+                        </br>
 
-
-            <%= link_to "#{}" do%>
-            <button data-toggle="tooltip" title="Start to test for <%= @project.name%>!">
-
-                Test  <span class="glyphicon glyphicon-play"></span>
-            </button>
-                    <% end %>
-
-            <%= link_to "#{}" do%>
-            <button data-toggle="tooltip" title="Edit pins.">
-
-                  Edit <span class="glyphicon glyphicon-play"></span></span>
-            </button>
-            <% end %>
-    </div>
-    <button data-toggle="tooltip" title="Edit pins." type="button" class="btn btn-secondary">Edit</button>
-
+          </div>
   </div>
+
+</div>
+
 
   <div class="col-md-8">
 
 
-  <h1><b>Pinout for project:</b> <%=@project.name%></h1>
+<div class="panel panel-default">
+    <div class="panel-heading"> <h2><b>Pinout for project:</b> <%=@project.name%></h2></div>
+    <div class="panel-body">
   <div>
-  <table class="table table-dark .table-condensed">
+  <table class="table table-condensed">
 
+
+    <tr class="info">
+      <th>DUT site:</th>
+      <th></th>
+      <th></th>
+      <th>Setup site:</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
       <tr class="info">
-        <th>Pin dut:</th>
-        <th>Pin dut name:</th>
-        <th>Pin dut description:</th>
-        <th>Pin setup:</th>
-        <th>Pin setup name:</th>
-        <th>Pin setup description:</th>
-
-        <th></th>
-        <th></th>
+        <th>pin no.:</th>
+        <th>pin name:</th>
+        <th>description:</th>
+        <th>pin no.:</th>
+        <th>name:</th>
+        <th>description:</th>
+        <th>edit:</th>
       </tr>
 
 
@@ -60,6 +69,11 @@
           <td><%= pinout.pin_setup %></td>
           <td><%= pinout.pin_setup_name %></td>
           <td><%= pinout.pin_setup_description %></td>
+          <td><%= link_to edit_pinout_path(pinout) do%>
+              <button class="btn btn-info " data-toggle="tooltip" title="Edit pin">
+                  <span class="fa fa fa-cogs"></span>
+              </button>
+          <% end %> </td>
       <% end %>
 <% end %>
   </table>
@@ -69,14 +83,8 @@
     <%= will_paginate @pinout, renderer: BootstrapPagination::Rails %>
   </div>
 
-    <p>
-      <%= link_to"#{}" do%>
-      <button data-toggle="tooltip" title="Edit pinout for <%= @project.name%> project!">
 
-          <span class="fa fa fa-cogs">     </span>
-      </button>
-              <% end %>
-    </p>
-
+</div>
+</div>
 </div>
 </div>
