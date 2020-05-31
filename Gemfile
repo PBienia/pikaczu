@@ -37,7 +37,7 @@ gem 'rails-i18n'
 gem 'statesman'
  gem "font-awesome-rails"
  gem "bootstrap-table-rails"
- gem 'bootstrap', '~> 4.0.0.alpha3'
+ gem 'bootstrap', '~> 4.3.1'
  #gem 'simple_form', '~> 3.5'
  gem 'will_paginate', '~> 3.1.7'
  gem 'will_paginate-bootstrap','~> 1.0.1'
